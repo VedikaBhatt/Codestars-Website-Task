@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Plot from "react-plotly.js";
+import dynamic from "next/dynamic";
+
+const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 const Analyzer = ({ user, stats }) => {
   const [data, setData] = useState(null);
@@ -43,7 +45,7 @@ const Analyzer = ({ user, stats }) => {
         />
         <button
           onClick={fetchData}
-          className="ml-4 p-3 bg-yellow-500 text-black rounded-md"
+          className="ml-4 px-6 py-3 bg-yellow-400 text-black font-bold rounded-xl hover:bg-yellow-300 active:scale-95 transition-all duration-300"
         >
           Get Stats
         </button>

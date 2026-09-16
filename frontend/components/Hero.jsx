@@ -1,71 +1,143 @@
+"use client";
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Button } from "@/components/ui/button";
+import { FourStarsLogo } from "@/components/FourStarsLogo";
+import { HiOutlineArrowRight } from "react-icons/hi";
+import { FaDiscord } from "react-icons/fa";
 
 export function Hero() {
-  const words1 = ["COMPETITIVE", "DATA STRUCTURES"];
-  const words2 = ["PROGRAMMING", "& ALGORITHMS"];
+  const words = [
+    "COMPETITIVE CODING",
+    "ALGORITHMS & DATA STRUCTURES",
+    "ICPC CONTESTS",
+    "PROBLEM SOLVING",
+  ];
 
   return (
-    <div className="relative flex flex-col justify-center items-center w-full h-screen ">
-    <div
-      className="relative flex flex-col justify-center items-center w-full h-screen bg-no-repeat bg-cover bg-center"
-      style={{
-        backgroundImage: `linear-gradient(200deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 80%), url('/codestars.svg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <Image src={'/line.svg'} width={2} height={5} style={{ position: 'absolute', top: '10vh', left: '30vw' }} />
-      <Image src={'/line.svg'} width={2} height={5} style={{ position: 'absolute', top: '30vh', right: '20vw' }} />
-      
-      {/* Overlay Text */}
-      <div className="flex flex-col w-full px-4">
-        <div className="w-full flex justify-start mb-2">
-          <h2 className="font-semibold mx-4 text-gray-400">DJS CODESTARS</h2>
-        </div>
-        <div className="w-full flex justify-start mb-0 xs:mb-0">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold text-gray-300">
-            <FlipWords words={words1} />
-          </h2>
-        </div>
-        <div className="w-full flex justify-end">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-thin text-gray-300">
-            <FlipWords words={words2} />
-          </h2>
-        </div>
-        <div className="w-full right-0 flex justify-end">
-          <h3 className="text-sm lg:w-1/2 text-right sm:text-s md:text-xl lg:text-2xl font-medium text-gray-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h3>
-        </div>
+    <section className="relative flex flex-col justify-center items-center w-full min-h-screen px-4 sm:px-6 lg:px-12 pt-24 pb-16 overflow-hidden">
+      {/* Ambient background glow accents */}
+      <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-yellow-500/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-amber-500/10 blur-[140px] pointer-events-none" />
 
-        {/* Button and Stats */}
-        <div className="w-full flex flex-col sm:flex-row sm:justify-between mt-24 items-center gap-8">
-          <Button className="px-8 rounded-3xl h-12 text-black font-normal text-lg hover:bg-transparent hover:border-yellow-500 hover:border-2 hover:text-white transition duration-300 ease-in-out">
-            Join our community
-            <Image src={'/arrow.svg'} height={10} width={10} className="ml-2 hover:fill-white" alt="Arrow Icon"/>
-          </Button>
-
-          {/* Stats Section */}
-          <div className="flex flex-col sm:flex-row gap-10 text-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white">120+</h3>
-              <p className="text-sm text-gray-400">Sessions Conducted</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white">50+</h3>
-              <p className="text-sm text-gray-400">Events Hosted</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white">500+</h3>
-              <p className="text-sm text-gray-400">Community Members</p>
+      <div className="relative z-20 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Left Text & CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6"
+        >
+          {/* Heading */}
+          <div className="space-y-2">
+            <h2 className="text-sm sm:text-base font-semibold tracking-widest uppercase text-neutral-400">
+              Welcome to
+            </h2>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white">
+              DJS{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 drop-shadow-[0_0_20px_rgba(250,204,21,0.4)]">
+                CODESTARS
+              </span>
+            </h1>
+            <div className="h-16 sm:h-20 flex items-center justify-center lg:justify-start">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-200">
+                <FlipWords words={words} className="text-yellow-400" />
+              </span>
             </div>
           </div>
-        </div>
+
+          {/* Subtitle */}
+          <p className="text-neutral-400 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+            A programming club that nurtures the spirit of computer programming
+            amongst students. Join us to explore, learn, compete, and innovate in the
+            world of competitive algorithms!
+          </p>
+
+          {/* Glowing Buttons Section */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <a
+              href="https://codeuncode.djscodestars.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="default"
+                size="lg"
+                className="gap-2"
+              >
+                <span>Explore CodeUncode</span>
+                <HiOutlineArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+
+            <a
+              href="https://discord.gg/B7Macam5PH"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="glow"
+                size="lg"
+                className="gap-2 border-yellow-500/60"
+              >
+                <FaDiscord className="w-5 h-5 text-yellow-400" />
+                <span>Join Discord</span>
+              </Button>
+            </a>
+
+            <Link href="/leaderboard">
+              <Button variant="outline" size="lg">
+                Leaderboard
+              </Button>
+            </Link>
+          </div>
+
+          {/* Stats Bar */}
+          <div className="grid grid-cols-3 gap-6 pt-8 w-full max-w-lg">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl sm:text-3xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">
+                120+
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
+                Sessions Held
+              </p>
+            </div>
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl sm:text-3xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">
+                50+
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
+                Contests Hosted
+              </p>
+            </div>
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl sm:text-3xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">
+                500+
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
+                Coders Community
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Four Stars Logo Showcase */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="lg:col-span-5 flex flex-col items-center justify-center relative py-6"
+        >
+          {/* Interactive Four Stars Logo */}
+          <FourStarsLogo
+            size="xl"
+            interactive={true}
+            subtitle={null}
+          />
+        </motion.div>
       </div>
-    </div>
-    </div>
+    </section>
   );
 }

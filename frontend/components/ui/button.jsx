@@ -5,25 +5,28 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        default:
+          "bg-yellow-400 text-black border border-yellow-300 hover:bg-yellow-300 active:scale-[0.98]",
+        glow:
+          "bg-black/80 text-yellow-400 border border-yellow-500/60 hover:bg-yellow-400 hover:text-black hover:border-yellow-300 active:scale-[0.98] backdrop-blur-md",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-yellow-500/50 bg-black/60 text-yellow-300 hover:bg-yellow-500/15 hover:border-yellow-400 hover:text-yellow-100 active:scale-[0.98]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-neutral-900/90 text-yellow-400 border border-neutral-800 hover:border-yellow-500/60 hover:bg-neutral-800/90 active:scale-[0.98]",
+        destructive:
+          "bg-red-900/80 text-red-200 border border-red-700/60 hover:bg-red-800 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]",
+        ghost: "text-yellow-400 hover:bg-yellow-400/10 hover:text-yellow-300",
+        link: "text-yellow-400 underline-offset-4 hover:underline hover:text-yellow-300",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-11 px-5 py-2.5",
+        sm: "h-9 rounded-lg px-3.5 text-xs",
+        lg: "h-13 rounded-2xl px-8 py-3.5 text-base",
+        icon: "h-11 w-11 rounded-xl",
       },
     },
     defaultVariants: {

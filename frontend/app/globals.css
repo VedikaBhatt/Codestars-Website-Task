@@ -2,70 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-  
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 48 100% 96%;
+    --card: 0 0% 5%;
+    --card-foreground: 48 100% 96%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 48 100% 96%;
+    --primary: 48 96% 53%; /* #FACC15 Electric Yellow */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 48 96% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 48 20% 70%;
+    --accent: 48 96% 53%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 48 96% 53%;
+    --input: 0 0% 18%;
+    --ring: 48 96% 53%;
+    --radius: 1rem;
+  }
 
-  :root  {
-    --background: 38 100% 95%;
-    --foreground: 38 5% 0%;
-    --card: 38 50% 90%;
-    --card-foreground: 38 5% 10%;
-    --popover: 38 100% 95%;
-    --popover-foreground: 38 100% 0%;
-    --primary: 38 96% 50.4%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 38 30% 70%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 0 30% 85%;
-    --muted-foreground: 38 5% 35%;
-    --accent: 0 30% 80%;
-    --accent-foreground: 38 5% 10%;
-    --destructive: 0 100% 30%;
-    --destructive-foreground: 38 5% 90%;
-    --border: 38 30% 50%;
-    --input: 38 30% 18%;
-    --ring: 38 96% 50.4%;
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 48 100% 96%;
+    --card: 0 0% 4%;
+    --card-foreground: 48 100% 96%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 48 100% 96%;
+    --primary: 48 96% 53%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 48 96% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 48 20% 70%;
+    --accent: 48 96% 53%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 48 60% 30%;
+    --input: 0 0% 18%;
+    --ring: 48 96% 53%;
     --radius: 1rem;
   }
-  .dark  {
-    --background: 38 50% 5%;
-    --foreground: 38 5% 90%;
-    --card: 38 50% 0%;
-    --card-foreground: 38 5% 90%;
-    --popover: 38 50% 5%;
-    --popover-foreground: 38 5% 90%;
-    --primary: 38 96% 50.4%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 38 30% 10%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 30% 15%;
-    --muted-foreground: 38 5% 60%;
-    --accent: 0 30% 15%;
-    --accent-foreground: 38 5% 90%;
-    --destructive: 0 100% 30%;
-    --destructive-foreground: 38 5% 90%;
-    --border: 38 30% 18%;
-    --input: 38 30% 18%;
-    --ring: 38 96% 50.4%;
-    --radius: 1rem;
-  }
-  
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border/20;
+    box-sizing: border-box;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground antialiased selection:bg-yellow-400 selection:text-black;
+    overflow-x: hidden;
   }
 }
 
-
 @layer utilities {
-  .custom-scrollbar {
-    scrollbar-width: thin;
+  .glow-yellow-sm {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.35);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 0 40px rgba(234, 179, 8, 0.25);
+  }
+  .glow-yellow-lg {
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.75), 0 0 60px rgba(234, 179, 8, 0.45);
+  }
+  .glow-text {
+    text-shadow: 0 0 12px rgba(250, 204, 21, 0.6), 0 0 24px rgba(234, 179, 8, 0.3);
+  }
+  .glow-border {
+    border-color: rgba(250, 204, 21, 0.5);
+    box-shadow: inset 0 0 12px rgba(250, 204, 21, 0.15), 0 0 15px rgba(250, 204, 21, 0.2);
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ca8a04;
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #facc15;
   }
 }

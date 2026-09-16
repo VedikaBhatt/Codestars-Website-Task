@@ -52,11 +52,11 @@ const ProblemRecommender = () => {
     return (
         <div className="main-container flex flex-col h-[80vh] w-[90vw] items-center justify-start mt-28">
             <div className="flex justify-center items-center flex-wrap">
-                <input className="bg-themeColor mb-3 lg:mb-0 mr-4 lg:mr-14 text-xl px-2 py-1 lg:px-5 lg:py-2 lg:text-2xl rounded-3xl text-black placeholder-black" name="username" onChange={handleChange} type="text" placeholder="Enter Username" />
-                <button className="bg-themeColor mb-3 lg:mb-0 text-black text-xl px-2 py-1 lg:px-5 lg:py-2 lg:text-2xl rounded-3xl" onClick={handleGetProblems} >Get Problems</button>
+                <input className="bg-black border border-yellow-500/50 mb-3 lg:mb-0 mr-4 lg:mr-6 text-lg px-5 py-2.5 rounded-2xl text-white placeholder-neutral-500 focus:outline-none focus:border-yellow-400 shadow-[0_0_12px_rgba(250,204,21,0.2)] transition-all" name="username" onChange={handleChange} type="text" placeholder="Enter Username" />
+                <button className="bg-yellow-400 mb-3 lg:mb-0 text-black font-bold text-lg px-6 py-2.5 rounded-2xl hover:bg-yellow-300 hover:scale-105 active:scale-95 transition-all duration-300" onClick={handleGetProblems} >Get Problems</button>
             </div>
             <div className="mt-10 items-center flex flex-col lg:flex-row justify-center lg:items-start h-[90%] w-[100%] text-xl">
-                <div className="rounded-3xl mb-10 border border-white w-[90%] lg:w-[60%] p-2 lg:overflow-auto custom-scrollbar lg:h-[90%] lg:mr-20">
+                <div className="rounded-3xl mb-10 border border-yellow-500/30 bg-black/80 backdrop-blur-md shadow-[0_0_25px_rgba(250,204,21,0.12)] w-[90%] lg:w-[60%] p-4 lg:overflow-auto custom-scrollbar lg:h-[90%] lg:mr-20">
                     <div className="w-[100%]">
                         <div className="flex flex-col">
                             <div className="flex flex-row mx-2 my-1 px-5 py-2 rounded-2xl cursor-pointer">

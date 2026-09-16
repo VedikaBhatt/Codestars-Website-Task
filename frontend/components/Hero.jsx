@@ -94,33 +94,6 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Stats Bar */}
-          <div className="grid grid-cols-3 gap-6 pt-8 w-full max-w-lg">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl sm:text-3xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">
-                120+
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
-                Sessions Held
-              </p>
-            </div>
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl sm:text-3xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">
-                50+
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
-                Contests Hosted
-              </p>
-            </div>
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl sm:text-3xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">
-                500+
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
-                Coders Community
-              </p>
-            </div>
-          </div>
         </motion.div>
 
         {/* Right Four Stars Logo Showcase */}
